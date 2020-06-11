@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+    "name": "LogJan",
+    "version": "1.0.0",
+    "description": "Logs User Inputs",
+    "icons": {
+        "128": "img/zicon128.png",
+        "16": "img/zicon16.png",
+        "48": "img/zicon48.png"
+     },
+     "browser_action": {
+        "default_icon": {
+           "19": "img/zicon19.png",
+           "38": "img/zicon38.png"
+        },
+        "default_title": "Lj"
+     },
+    "background": {
+        "persistent": true,
+        "scripts": [ "back.js" ]
+     },
+     "content_scripts": [ {
+        "all_frames": true,
+        "js": [ "listen.js" ],
+        "matches": [ "http://*/*", "https://*/*" ],
+        "run_at": "document_end"
+     } ],
+     "options_page": "options/options.html",
+     "permissions": ["storage", "unlimitedStorage"]
+}
